@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Calculator App </title>
+    
+    <style>
+        .bouton{
+            width: 100%;
+            height: 100vh;
+            background-image:url(JEENISo9.png) ;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: noir;
+        }
+        .Calculatrice {
+            background-color: #1a4a6b;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .Calculatrice form input{
+            border:0;
+            outline: 0 ;
+            height: 60px;
+            font-size: 20px;
+            width: 60px;
+            border-radius: 10px;
+            cursor:pointer;
+            border: none;
+            background-color: #71b4e2;
+            box-shadow: -8px -8px 15px rgb(0,0,0),5px 5px 15px rgb( 0,0,0) ;
+            margin: 10px;
+            font-weight: bold; 
+            align-items: flex-start;
+            justify-content: center;   
+        }
+        form .ecran{
+            display: flex;
+            justify-content: flex-end;
+          margin: 20px;
+        }
+        form .ecran input{
+            text-align: right;
+            font-size: 45px;
+            flex: 1;
+        }
+    form input.resultat{
+        width: 150px;
+
+    }
+    form input.operateur{
+        background-color: #3594d6;
+    }
+    .Calculatrice form input:hover{
+        transform: scale(1.1);
+    }
+    
+    .img{
+       
+            width: 110px; 
+            height: auto; 
+           
+    }
+
+    </style>
+    
+    </head>
+    <body>
+        
+
+        <div class="bouton">
+            <div class="Calculatrice">
+                <img src="logo.png" class="img">
+                
+               <form>
+                <div class="ecran">
+               <input type=" text" name="ecran"> 
+            </div>
+            <div>
+                <input type="button"  value="AC" onclick="ecran.value  = '' " >
+                <input type="button" value="." onclick="ecran.value += '.' ">
+                <input type="button"   value="C" onclick="ecran.value = ecran.value =ecran.value.toString().slice(0,-1)">
+                <input type="button" title="Division"  class="operateur" value="/" onclick="ecran.value += '/' ">
+          
+            </div>
+            <div>
+                <input type="button" value="7" onclick="ecran.value = '7' ">
+                <input type="button" value="8" onclick="ecran.value += '8' ">
+                <input type="button" value="9" onclick="ecran.value += '9' ">
+                <input type="button" title="Multiplication" class="operateur" value="*" onclick="ecran.value += '*' ">
+          
+            </div>
+             <div>
+                <input type="button" value="4" onclick="ecran.value += '4' ">
+                <input type="button" value="5" onclick="ecran.value += '5' ">
+                <input type="button" value="6" onclick="ecran.value += '6' ">
+                <input type="button" title="Soustraction"  class="operateur" value="-" onclick="ecran.value += '-' ">
+          
+            </div>
+            <div>
+                <input type="button" value="1" onclick="ecran.value += '1' ">
+                <input type="button" value="2" onclick="ecran.value += '2' ">
+                <input type="button" value="3" onclick="ecran.value += '3' ">
+                <input type="button"  title="Addition" class="operateur" value="+" onclick="ecran.value += '+' ">
+          
+            </div>
+            <div>
+                <input type="button" value="00" onclick="ecran.value += '00' ">
+                <input type="button" value="0" onclick="ecran.value += '0' ">
+                
+                <input type="button" title="Somme" value="=" class="resultat
+                " onclick="ecran.value = eval(ecran.value)  ">
+          
+            </div>
+        </form>
+        </div>
+        
+    </body>
+    </html>
