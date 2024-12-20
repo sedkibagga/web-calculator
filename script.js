@@ -1,27 +1,50 @@
-let input = document.getElementById('inputBox');
-let buttons = document.querySelectorAll('button');
+let expression = "";
 
-let string = "";
-let arr = Array.from(buttons);
-arr.forEach(button => {
-    button.addEventListener('click', (e) =>{
-        if(e.target.innerHTML == '='){
-            string = eval(string);
-            input.value = string;
+function appendValue(value) {
+  expression += value;
+  document.getElementById("result").value = expression;
+}
+
+function clearScreen() {
+  expression = "";
+  document.getElementById("result").value = "";
+}
+
+function calculateResult() {
+  try {
+    const result = eval(expression);
+    document.getElementById("result").value = result;
+    expression = result.toString();
+  } catch {
+    document.getElementById("result").value = "Error";
+    expression = "";
+  }
+}
+document.addEventListener('DOMContentLoaded', () => {
+    const display = document.getElementById('display');
+    const buttons = document.querySelectorAll('.button');
+
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            display.value += button.getAttribute('data-value');
+        });
+    });
+
+    document.addEventListener('keydown', (event) => {
+        const key = event.key;
+
+        if (key >= 0 && key <= 9 || key === '+' || key === '-' || key === '*' || key === '/' || key === '.') {
+            display.value += key;
         }
 
-        else if(e.target.innerHTML == 'AC'){
-            string = "";
-            input.value = string;
+        if (key === 'Enter') {
+            try {
+                display.value = eval(display.value);
+            } catch (e) {
+                display.value = 'Error';
+            }
+        } else if (key === 'Backspace') {
+            display.value = display.value.slice(0, -1);
         }
-        else if(e.target.innerHTML == 'DEL'){
-            string = string.substring(0, string.length-1);
-            input.value = string;
-        }
-        else{
-            string += e.target.innerHTML;
-            input.value = string;
-        }
-        
-    })
-})
+    });
+});
