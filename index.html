@@ -1,66 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculatrice</title>
-    <link rel="stylesheet" href="style.css">
- 
+    <meta charset="UTF-8"/>
+    <title>Calculator</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
-<body>
+<body onload="load()">
+    <div id="calculator">
+        <!-- Screen and clear key -->
+        <div class="top">
+            <span id="clear">C</span>
+            <div id="screen"></div>
+        </div>
 
-    <div class="calculatrice">
-        <div class="video-background">
-            <video autoplay loop muted>
-              <source src="assests/2.mp4" type="video/mp4">
-            </video>
-          </div>
-        <div class="name">
-           <a href="https://jeeniso.com/" target="_blank"><img src="assests/jeeniso.png" alt="JEENISO" width="90" ></a>
-            <h2>JEENISoCalc</h2>  
+        <div class="keys">
+            <!-- operators and other keys -->
+            <span>7</span>
+            <span>8</span>
+            <span>9</span>
+            <span class="operator">+</span>
+            <span>4</span>
+            <span>5</span>
+            <span>6</span>
+            <span class="operator">-</span>
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+            <span class="operator">÷</span>
+            <span>0</span>
+            <span>.</span>
+            <span class="eval">=</span>
+            <span class="operator">x</span>
         </div>
-        
-        <div class="affichage">
-            <input type="text"  id="affich" placeholder="0">
-        </div>
-        <div class="ligne">
-            <button style="color: crimson;">C</button>
-            <button>(</button>
-            <button>)</button>
-            <button>DEL</button>
-            
-        </div>
-        <div class="ligne">
-            <button>7</button>
-            <button>8</button>
-            <button>9</button>
-            <button>*</button>
-            
-        </div>
-        <div class="ligne">
-            <button>4</button>
-            <button>5</button>
-            <button>6</button>
-            <button>-</button>
-            
-        </div>
-        <div class="ligne">
-            <button>1</button>
-            <button>2</button>
-            <button>3</button>
-            <button>+</button>
-            
-        </div>
-        <div class="ligne">
-            <button>0</button>
-            <button>.</button>
-            <button>+/-</button>
-            <button style="background-color: rgb(78, 81, 88); color: white;">=</button>
-        </div>
-        
     </div>
-    <script src="script.js"></script>
-
-    
+    <script type="text/javascript" src="index.js"></script>
 </body>
 </html>
