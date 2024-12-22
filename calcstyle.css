@@ -1,0 +1,12 @@
+#head {
+   text-align: center; 
+   font-family: 'Courier New', Courier, monospace;
+}
+#input {
+    padding: 1dvb;
+    width: 10dvb;
+    border-style: double;
+}
+#c {
+   padding: 1dvb;
+}
