@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALCULATRICE</title>
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f4f5f9;
+            color: #1c1f21;
+            text-align: center;
+        }
+
+        h1 {
+            margin-top: 20px;
+            font-size: 42px;
+            color: #5a618c;
+        }
+
+        #CALCULATRICE {
+            margin: 30px auto;
+            padding: 20px;
+            width: 300px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: black;
+        }
+
+        input {
+            width: 280px;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #d1c7c7;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        #resultat {
+            font-size: 20px;
+            margin: 15px;
+            font-weight: bold;
+            color: #232222;
+
+        }
+
+        button {
+            padding: 10px 15px;
+            margin: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            background-color: #616585;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div id="CALCULATRICE">
+        <h1>CALCULATRICE</h1>
+        <input id="num1"  placeholder="premier nombre">
+        <input id="num2" placeholder="deuxieme nombre">
+        <button onclick="addition()">+</button>
+        <button onclick="multiplication()">x</button>
+        <button onclick="soustraction()">-</button>
+        <button onclick="division()">÷</button>
+        <p id="resultat">resultat:</p>
+    </div>
+    <script>
+        function addition() {
+            let num1= parseFloat(document.getElementById("num1").value);
+            let num2= parseFloat(document.getElementById("num2").value);
+            document.getElementById("resultat").textContent= "Resultat: "+(num1+num2);
+        }
+        function multiplication() {
+            let num1 = parseFloat(document.getElementById("num1").value);
+            let num2 = parseFloat(document.getElementById("num2").value);
+            document.getElementById("resultat").textContent = "Resultat: " + (num1 * num2);
+        }
+        function soustraction() {
+            let num1= parseFloat(document.getElementById("num1").value);
+            let num2= parseFloat(document.getElementById("num2").value);
+            document.getElementById("resultat").textContent= "Resultat: "+(num1-num2);
+        }
+        function division() {
+            let num1= parseFloat(document.getElementById("num1").value);
+            let num2= parseFloat(document.getElementById("num2").value);
+            if (num2 == 0) {
+                document.getElementById("resultat").textContent="Impossible de diviser par 0"
+            } else {
+                document.getElementById("resultat").textContent= "Resultat: "+(num1/num2);
+            }
+        }
+    </script>
+</body>
+</html>
