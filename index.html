@@ -3,64 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculatrice</title>
-    <link rel="stylesheet" href="style.css">
- 
+    <title>calcul</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-
-    <div class="calculatrice">
-        <div class="video-background">
-            <video autoplay loop muted>
-              <source src="assests/2.mp4" type="video/mp4">
-            </video>
-          </div>
-        <div class="name">
-           <a href="https://jeeniso.com/" target="_blank"><img src="assests/jeeniso.png" alt="JEENISO" width="90" ></a>
-            <h2>JEENISoCalc</h2>  
-        </div>
+    <div class="calculator">
+        <input type="text" class="calculator-screen" disabled placeholder="0" />
+        <button onclick="clearAll()">AC</button>
+        <div class="calculator-keys">
         
-        <div class="affichage">
-            <input type="text"  id="affich" placeholder="0">
-        </div>
-        <div class="ligne">
-            <button style="color: crimson;">C</button>
-            <button>(</button>
-            <button>)</button>
-            <button>DEL</button>
-            
-        </div>
-        <div class="ligne">
-            <button>7</button>
-            <button>8</button>
-            <button>9</button>
-            <button>*</button>
-            
-        </div>
-        <div class="ligne">
-            <button>4</button>
-            <button>5</button>
-            <button>6</button>
-            <button>-</button>
-            
-        </div>
-        <div class="ligne">
-            <button>1</button>
-            <button>2</button>
-            <button>3</button>
-            <button>+</button>
-            
-        </div>
-        <div class="ligne">
-            <button>0</button>
-            <button>.</button>
-            <button>+/-</button>
-            <button style="background-color: rgb(78, 81, 88); color: white;">=</button>
+            <button type="button" value="7">7</button>
+            <button type="button" value="8">8</button>
+            <button type="button" value="9">9</button>
+            <button type="button" class="operator" value="/">&divide;</button>
+        
+            <button type="button" value="4">4</button>
+            <button type="button" value="5">5</button>
+            <button type="button" value="6">6</button>
+            <button type="button" class="operator" value="+">+</button>
+        
+            <button type="button" value="1">1</button>
+            <button type="button" value="2">2</button>
+            <button type="button" value="3">3</button>
+            <button type="button" class="operator" value="-">-</button>
+        
+            <button type="button" value="0">0</button>
+            <button type="button" class="decimal" value=".">.</button>
+            <button type="button" class="equal-sign operator" value="=">=</button>
+            <button type="button" class="operator" value="*">&times;</button>
+
         </div>
         
     </div>
-    <script src="script.js"></script>
-
-    
+    <script src="java.js"></script>
 </body>
 </html>
