@@ -3,63 +3,167 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculatrice</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Calculator</title>
+    <style>
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: lightgray;
+  margin: 0;
+}
+.outer-container {
+  background-color: beige;
+  padding: 20px; 
+  border-radius: 15px; 
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); 
+  margin-left:-250px ;
+}
+
  
+.calculator {
+  background-color:black;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+   
+
+}
+
+#display {
+  width: 100%;
+  height: 60px;
+  background-color: gray;
+  color: black;
+  text-align: right;
+  padding: 15px;
+  font-size: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+}
+
+button {
+  width: 50px;
+  height: 50px;
+  font-size: 18px;
+  background-color: lightblue;
+  color: black;
+  border: black;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+button.add{
+    background-color: green;
+
+}
+button.subtract{
+    background-color: green;
+
+}
+button.Multiply{
+    background-color: green;
+}
+button.divide{
+    background-color: green;
+}
+
+button:hover {
+  background-color: blue;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+.control-buttons {
+  display: flex; 
+  justify-content: flex-end; 
+  gap: 5px; 
+  margin-bottom: 5px; 
+
+  
+}
+.calculator-title {
+  font-size: 36px;
+  color: black;
+  text-align: center ; 
+  margin-bottom: 500px; 
+  font-family: Arial, sans-serif;
+  
+}
+
+    </style>
 </head>
 <body>
+    <h1 class="calculator-title">Calculator App</h1>
+    <div class="outer-container">
+        <div class="Calculator">
+        <input type="text" id="display" disabled aria-label="Calculator display">
+        <div class="control-buttons">
+            <button onclick="clearDisplay()"aria-label="clear">AC</button>
+            <button onclick="backspace()" aria-label="Backspace">←</button>
+        </div>
+        
+        <div class="button">
+        
+            
+              <button class="number" onclick="appendValue('7')">7</button>
+              <button class="number" onclick="appendValue('8')">8</button>
+              <button class="number" onclick="appendValue('9')">9</button>
+              <button class="divide" onclick="appendValue('/')">÷</button>
+              <br>
+              <button class="number" onclick="appendValue('4')">4</button>
+              <button class="number" onclick="appendValue('5')">5</button>
+              <button class="number" onclick="appendValue('6')">6</button>
+              <button class="add" onclick="appendValue('+')">+</button>
+              <br>
+              <button class="number" onclick="appendValue('1')">1</button>
+              <button class="number" onclick="appendValue('2')">2</button>
+              <button class="number" onclick="appendValue('3')">3</button>
+              <button class="subtract" onclick="appendValue('-')">-</button>
+              <br>
+              <button class="number" onclick="appendValue('0')">0</button>
+              <button onclick="appendValue('.')">.</button>
+              <button onclick="calculate()"aria-label="Equals">=</button>
+              <button class="Multiply" onclick="appendValue('*')">*</button>
+              
+        
+        </div>
 
-    <div class="calculatrice">
-        <div class="video-background">
-            <video autoplay loop muted>
-              <source src="assests/2.mp4" type="video/mp4">
-            </video>
-          </div>
-        <div class="name">
-           <a href="https://jeeniso.com/" target="_blank"><img src="assests/jeeniso.png" alt="JEENISO" width="90" ></a>
-            <h2>JEENISoCalc</h2>  
-        </div>
-        
-        <div class="affichage">
-            <input type="text"  id="affich" placeholder="0">
-        </div>
-        <div class="ligne">
-            <button style="color: crimson;">C</button>
-            <button>(</button>
-            <button>)</button>
-            <button>DEL</button>
-            
-        </div>
-        <div class="ligne">
-            <button>7</button>
-            <button>8</button>
-            <button>9</button>
-            <button>*</button>
-            
-        </div>
-        <div class="ligne">
-            <button>4</button>
-            <button>5</button>
-            <button>6</button>
-            <button>-</button>
-            
-        </div>
-        <div class="ligne">
-            <button>1</button>
-            <button>2</button>
-            <button>3</button>
-            <button>+</button>
-            
-        </div>
-        <div class="ligne">
-            <button>0</button>
-            <button>.</button>
-            <button>+/-</button>
-            <button style="background-color: rgb(78, 81, 88); color: white;">=</button>
-        </div>
-        
     </div>
-    <script src="script.js"></script>
+</div>
+    
+    <script>
+        function appendValue(value) {
+    const display = document.getElementById('display');
+    display.value += value;
+  }
+  function clearDisplay() {
+    const display = document.getElementById('display');
+    display.value = '';
+  }
+  function backspace() {
+    const display = document.getElementById('display');
+    display.value = display.value.slice(0, -1);
+  }
+  function calculate() {
+    const display = document.getElementById('display');
+    try {
+      display.value = eval(display.value); 
+    } catch {
+      display.value = 'Error'; 
+    }
+  }
+    </script>
+
 
     
 </body>
